@@ -1,0 +1,2 @@
+class DailyItem < ApplicationRecord
+end
