@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
   resources :daily_items
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :campers, only: [:index, :show, :create]
 end
