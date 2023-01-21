@@ -8,7 +8,7 @@ class DailyItemsController < ApplicationController
 
     def show
         # render one instances
-        item = DailyItem.find(params[:date])
+        item = DailyItem.find(params[:id])
         render json: item, status: 200
     end
 
