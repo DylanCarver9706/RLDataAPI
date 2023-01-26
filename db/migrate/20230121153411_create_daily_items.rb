@@ -6,6 +6,7 @@ class CreateDailyItems < ActiveRecord::Migration[7.0]
       t.string :rarity
       t.string :color
       t.datetime :date
+      t.string :image
 
       t.timestamps
     end
