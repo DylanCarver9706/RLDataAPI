@@ -1,0 +1,2 @@
+class ItemShopDate < ApplicationRecord
+end

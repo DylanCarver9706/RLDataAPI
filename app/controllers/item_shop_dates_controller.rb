@@ -1,0 +1,2 @@
+class ItemShopDatesController < ApplicationController
+end

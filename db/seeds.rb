@@ -1,16 +1,16 @@
+require 'date'
+
 puts "Seeding Items..."
 
-DailyItem.create(name: "Octane", cost: 700, rarity: "Import Body", color: "Saffron", date: Time.new, image: "https://i.imgur.com/O3vNJRN.png")
-DailyItem.create(name: "Hexed", cost: 2000, rarity: "Black Market Decal", color: "Default", date: Time.new, image: "https://i.imgur.com/DgVyPA5.png")
-DailyItem.create(name: "Infinium", cost: 700, rarity: "Exotic Wheels", color: "Default", date: Time.new, image: "https://i.imgur.com/7dwrPiy.png")
-DailyItem.create(name: "Storm Watch", cost: 2000, rarity: "Black Market Decal", color: "Default", date: Time.new, image: "https://i.imgur.com/O3vNJRN.png")
-DailyItem.create(name: "Quimby", cost: 200, rarity: "Very Rare Wheels", color: "Default", date: Time.new, image: "https://i.imgur.com/DgVyPA5.png")
-DailyItem.create(name: "Xenosplash", cost: 200, rarity: "Very Rare Rocket Boost", color: "Default", date: Time.new, image: "https://i.imgur.com/7dwrPiy.png")
-DailyItem.create(name: "Tailwind: Schematized", cost: 600, rarity: "Import Wheels", color: "Black", date: Time.new, image: "https://i.imgur.com/O3vNJRN.png")
-DailyItem.create(name: "Neoctane", cost: 100, rarity: "Rare Banner", color: "Default", date: Time.new, image: "https://i.imgur.com/DgVyPA5.png")
-DailyItem.create(name: "Canister", rarity: "Rare", Type: "Wheel", Color: "", Image: "https://rl.insider.gg/en/pc/wheels/canister")
-DailyItem.create(name: "Hasher", rarity: "Very Rare", Type: "Wheel", Color: "", Image: "https://rl.insider.gg/en/pc/wheels/hasher")
-DailyItem.create(name: "Hasher: SE", rarity: "Very Rare", Type: "Wheel", Color: "", Image: "https://rl.insider.gg/en/pc/wheels/hasher/inverted")
-DailyItem.create(name: "Jak'd", rarity: "Very Rare", Type: "Wheel", Color: "", Image: "https://rl.insider.gg/en/pc/wheels/jak_d")
-DailyItem.create(name: "Jak'd: Obverse", rarity: "Exotic", Type: "Wheel", Color: "", Image: "https://rl.insider.gg/en/pc/wheels/jak_d/obverse")
-DailyItem.create(name: "Chakram: Holographic", rarity: "Import", Type: "Wheel", Color: "", Image: "https://rl.insider.gg/en/pc/wheels/chakram/holographic")
+puts "Seeding Item Shop Dates..."
+date1 = ItemShopDate.create(date: DateTime.new(2023,1,30,4,5,6))
+
+puts "Seeding Wheels..."
+DailyItem.create(name: "Canister", type: "wheels", cost: "", rarity: "Rare", color: "", item_shop_date_id: date1.id, image_location: "https://rl.insider.gg/en/pc/wheels/canister", image: "")
+DailyItem.create(name: "Hasher", type: "wheels", cost: "", rarity: "Very Rare", color: "", item_shop_date_id: date1.id, image_location: "https://rl.insider.gg/en/pc/wheels/hasher", image: "")
+DailyItem.create(name: "Hasher: SE", type: "wheels", cost: "", rarity: "Very Rare", color: "", item_shop_date_id: date1.id, image_location: "https://rl.insider.gg/en/pc/wheels/hasher/inverted", image: "")
+DailyItem.create(name: "Jak'd", type: "wheels", cost: "", rarity: "Very Rare", color: "", item_shop_date_id: date1.id, image_location: "https://rl.insider.gg/en/pc/wheels/jak_d", image: "")
+DailyItem.create(name: "Jak'd: Obverse", type: "wheels", cost: "", rarity: "Exotic", color: "", item_shop_date_id: date1.id, image_location: "https://rl.insider.gg/en/pc/wheels/jak_d/obverse", image: "")
+DailyItem.create(name: "Chakram: Holographic", type: "wheels", cost: "", rarity: "Import", color: "", item_shop_date_id: date1.id, image_location: "https://rl.insider.gg/en/pc/wheels/chakram/holographic", image: "")
+
+
