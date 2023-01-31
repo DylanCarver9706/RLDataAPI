@@ -22,6 +22,6 @@ class DailyItemsController < ApplicationController
     private
 
     def new_item_params
-        params.permit(:name, :cost, :rarity, :color, :date, :image)
+        params.permit(:name, :item_type, :cost, :rarity, :color, :item_shop_date_id, :image_location, :image)
     end
 end
