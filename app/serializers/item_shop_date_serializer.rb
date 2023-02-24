@@ -1,3 +1,3 @@
 class ItemShopDateSerializer < ActiveModel::Serializer
-  attributes :id, :date
+  attributes :id, :date, :cost
 end
