@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     private
 
     def new_item_params
-        params.permit(:id, :image, :valid_status, :name, :image_uri, :rarity, :item_type, :color)
+        params.permit(:id, :image, :valid_status, :name, :image_uri, :rarity, :item_type, :image_location, :color)
     end
 
     def item_params
