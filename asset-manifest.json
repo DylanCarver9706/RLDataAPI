@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/DylanCarver9706/RLDataAPI/static/css/main.073c9b0a.css",
+    "main.js": "/DylanCarver9706/RLDataAPI/static/js/main.6695b76e.js",
+    "static/js/787.9a29fcbe.chunk.js": "/DylanCarver9706/RLDataAPI/static/js/787.9a29fcbe.chunk.js",
+    "static/media/logo.svg": "/DylanCarver9706/RLDataAPI/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/DylanCarver9706/RLDataAPI/index.html",
+    "main.073c9b0a.css.map": "/DylanCarver9706/RLDataAPI/static/css/main.073c9b0a.css.map",
+    "main.6695b76e.js.map": "/DylanCarver9706/RLDataAPI/static/js/main.6695b76e.js.map",
+    "787.9a29fcbe.chunk.js.map": "/DylanCarver9706/RLDataAPI/static/js/787.9a29fcbe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.6695b76e.js"
+  ]
+}
