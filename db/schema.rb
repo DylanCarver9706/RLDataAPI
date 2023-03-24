@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_24_003457) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_011324) do
   create_table "antennas", force: :cascade do |t|
     t.string "name"
     t.string "rarity"
@@ -176,6 +176,32 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_24_003457) do
   end
 
   create_table "paint_finishes", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_anthems", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stickers", force: :cascade do |t|
     t.string "name"
     t.string "rarity"
     t.string "item_type"

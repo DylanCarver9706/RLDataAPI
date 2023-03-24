@@ -1,0 +1,2 @@
+class PlayerAnthem < ApplicationRecord
+end
