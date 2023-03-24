@@ -1,0 +1,2 @@
+class DecalsController < ApplicationController
+end

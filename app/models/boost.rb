@@ -1,0 +1,2 @@
+class Boost < ApplicationRecord
+end

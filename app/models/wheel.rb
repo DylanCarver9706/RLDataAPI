@@ -1,0 +1,2 @@
+class Wheel < ApplicationRecord
+end

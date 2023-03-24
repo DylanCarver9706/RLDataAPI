@@ -1,0 +1,2 @@
+class AntennasController < ApplicationController
+end

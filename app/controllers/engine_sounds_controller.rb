@@ -1,0 +1,2 @@
+class EngineSoundsController < ApplicationController
+end

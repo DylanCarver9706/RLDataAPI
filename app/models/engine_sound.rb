@@ -1,0 +1,2 @@
+class EngineSound < ApplicationRecord
+end

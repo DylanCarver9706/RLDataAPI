@@ -1,0 +1,2 @@
+class GoalExplosionsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class Topper < ApplicationRecord
+end

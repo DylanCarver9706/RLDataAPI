@@ -1,0 +1,2 @@
+class AvatarBordersController < ApplicationController
+end
