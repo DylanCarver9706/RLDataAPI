@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :avatars
   resources :avatar_borders
   resources :banners
   resources :engine_sounds
@@ -8,9 +7,11 @@ Rails.application.routes.draw do
   resources :antennas
   resources :toppers
   resources :boosts
-  resources :crates
   resources :paint_finishes
   resources :decals
+  resources :cars
+  resources :crates
+  resources :avatars
   resources :wheels
   resources :items, only: [:index, :show, :create, :update, :destroy]
   resources :item_shop_dates

@@ -1,8 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  valid_status: MyString
-  boolean,: MyString
+  valid_status,: MyString
   image_uri,: MyString
   name,: MyString
   rarity,: MyString
@@ -12,8 +11,7 @@ one:
   image: MyString
 
 two:
-  valid_status: MyString
-  boolean,: MyString
+  valid_status,: MyString
   image_uri,: MyString
   name,: MyString
   rarity,: MyString

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_24_055527) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_002457) do
   create_table "daily_items", force: :cascade do |t|
     t.string "name"
     t.string "item_type"
@@ -33,6 +33,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_055527) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wheels", force: :cascade do |t|
     t.string "name"
     t.string "rarity"
     t.string "item_type"
