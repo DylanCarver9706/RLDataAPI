@@ -54,7 +54,7 @@ const ItemList = () => {
 
     useEffect(() => {
         const filteredItems = items.filter((item) =>
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setDisplayedItems(filteredItems.slice(0, currentPage * itemsPerPage));
         setHasMoreItems(filteredItems.length > currentPage * itemsPerPage);
