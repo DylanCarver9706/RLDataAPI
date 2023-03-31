@@ -1,86 +1,73 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Card } from 'antd';
+import { Card } from 'antd';
 
 const { Meta } = Card;
 
-const Wheels = () => {
+const Wheels = ({ searchTerm }) => {
     const [wheels, setWheels] = useState([]);
-    const [form] = Form.useForm();
+    const [displayedWheels, setDisplayedWheels] = useState([]);
+    const [hasMoreWheels, setHasMoreWheels] = useState(true);
+
+    const wheelsPerPage = 24;
+
+    const fetchWheels = async () => {
+        const response = await fetch('http://localhost:3000/wheels');
+        const data = await response.json();
+        return data;
+    };
+
+    const fetchData = async () => {
+        const data = await fetchWheels();
+        setWheels(data);
+    };
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('http://localhost:3000/wheels');
-            const data = await response.json();
-            setWheels(data);
-        };
-
         fetchData();
     }, []);
 
-    const onFinish = async (values) => {
-        try {
-            const response = await fetch('http://localhost:3000/wheels', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(values),
-            });
+    useEffect(() => {
+        setDisplayedWheels([]);
+        setHasMoreWheels(true);
+    }, [searchTerm]);
 
-            if (!response.ok) {
-                throw new Error('Failed to add wheel');
-            }
+    useEffect(() => {
+        const filteredWheels = wheels.filter((wheel) =>
+            wheel.name.toLowerCase().includes(searchTerm?.toLowerCase())
+        );
+        setDisplayedWheels(filteredWheels.slice(0, wheelsPerPage));
+        setHasMoreWheels(filteredWheels.length > wheelsPerPage);
+    }, [wheels, searchTerm]);
 
-            const newWheel = await response.json();
-            setWheels([...wheels, newWheel]);
-            form.resetFields();
-        } catch (error) {
-            console.error(error);
-        }
+    const loadMore = () => {
+        setDisplayedWheels([
+            ...displayedWheels,
+            ...wheels.slice(
+                displayedWheels.length,
+                displayedWheels.length + wheelsPerPage
+            ),
+        ]);
     };
 
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h1 style={{ textAlign: 'center' }}>Wheels</h1>
-            <Form form={form} onFinish={onFinish} style={{ marginBottom: '24px' }}>
-                <Form.Item
-                    label="Name"
-                    name="name"
-                    rules={[{ required: true, message: 'Please enter a name' }]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Color"
-                    name="color"
-                    rules={[{ required: true, message: 'Please enter a color' }]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit">
-                        Add Wheel
-                    </Button>
-                </Form.Item>
-            </Form>
+        <>
             <div
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                     gridGap: 20,
                     justifyContent: 'center',
                 }}
             >
-                {wheels.map((wheel) => (
+                {displayedWheels.map((wheel) => (
                     <Card
                         key={wheel.id}
                         hoverable
-                        style={{ width: '100%' }}
+                        style={{ maxWidth: '300px' }}
                         cover={
                             <img
                                 alt={wheel.name}
                                 src={`${wheel.image}`}
-                                style={{ height: 200, objectFit: 'contain' }}
+                                style={{ height: 'auto', width: '100%', objectFit: 'contain' }}
                             />
                         }
                     >
@@ -88,7 +75,12 @@ const Wheels = () => {
                     </Card>
                 ))}
             </div>
-        </div>
+            {hasMoreWheels && (
+                <button onClick={loadMore} style={{ marginTop: 20 }}>
+                    Load more wheels
+                </button>
+            )}
+        </>
     );
 };
 
