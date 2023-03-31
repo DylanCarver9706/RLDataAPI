@@ -35,7 +35,10 @@ const NavBar = ({ setSearchTerm }) => {
                 </IconButton>
                 <Typography variant="h6" noWrap sx={{ flexGrow: 1 }}>
                     <Link to="/RLDataAPI/" style={{ color: 'inherit', textDecoration: 'none' }}>
-                        RocketLeagueItemsAPI.com
+                        All Items
+                    </Link>
+                    <Link to="/RLDataAPI/wheels" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Wheels
                     </Link>
                 </Typography>
                 <div
