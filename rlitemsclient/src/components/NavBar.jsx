@@ -6,15 +6,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ setSearchTerm }) => {
-    // const [open, setOpen] = useState(false);
-
-    // const handleDrawerOpen = () => {
-    //     setOpen(true);
-    // };
-
-    // const handleDrawerClose = () => {
-    //     setOpen(false);
-    // };
 
     const handleSearch = (event) => {
         const searchTerm = event.target.value;
@@ -42,6 +33,48 @@ const NavBar = ({ setSearchTerm }) => {
                     </Link>
                     <Link to="/RLDataAPI/goal_explosions" style={{ color: 'inherit', textDecoration: 'none' }}>
                         Goal Explosions
+                    </Link>
+                    <Link to="/RLDataAPI/boosts" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Boosts
+                    </Link>
+                    <Link to="/RLDataAPI/bodies" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Bodies
+                    </Link>
+                    <Link to="/RLDataAPI/decals" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Decals
+                    </Link>
+                    <Link to="/RLDataAPI/antennas" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Antennas
+                    </Link>
+                    <Link to="/RLDataAPI/toppers" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Toppers
+                    </Link>
+                    <Link to="/RLDataAPI/trails" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Trails
+                    </Link>
+                    <Link to="/RLDataAPI/playeranthems" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Player Anthems
+                    </Link>
+                    <Link to="/RLDataAPI/paint_finishes" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Paint Finishes
+                    </Link>
+                    <Link to="/RLDataAPI/avatar_borders" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Avatar Borders
+                    </Link>
+                    <Link to="/RLDataAPI/avatars" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Avatars
+                    </Link>
+                    <Link to="/RLDataAPI/banners" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Banners
+                    </Link>
+                    <Link to="/RLDataAPI/crates" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Crates
+                    </Link>
+                    <Link to="/RLDataAPI/engine_sounds" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Engine Sounds
+                    </Link>
+                    <Link to="/RLDataAPI/stickers" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Stickers
                     </Link>
                 </Typography>
                 <div
