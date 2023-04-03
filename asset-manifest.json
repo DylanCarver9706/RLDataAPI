@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/RLDataAPI/static/css/main.e6c13ad2.css",
-    "main.js": "/RLDataAPI/static/js/main.71786750.js",
+    "main.js": "/RLDataAPI/static/js/main.a4701f80.js",
     "static/js/787.9a29fcbe.chunk.js": "/RLDataAPI/static/js/787.9a29fcbe.chunk.js",
     "index.html": "/RLDataAPI/index.html",
     "main.e6c13ad2.css.map": "/RLDataAPI/static/css/main.e6c13ad2.css.map",
-    "main.71786750.js.map": "/RLDataAPI/static/js/main.71786750.js.map",
+    "main.a4701f80.js.map": "/RLDataAPI/static/js/main.a4701f80.js.map",
     "787.9a29fcbe.chunk.js.map": "/RLDataAPI/static/js/787.9a29fcbe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.71786750.js"
+    "static/js/main.a4701f80.js"
   ]
 }
