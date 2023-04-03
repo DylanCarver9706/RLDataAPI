@@ -3,40 +3,71 @@ import { Card } from 'antd';
 
 const { Meta } = Card;
 
-const GoalExplosions = () => {
+const GoalExplosions = ({ searchTerm }) => {
     const [goalExplosions, setGoalExplosions] = useState([]);
+    const [displayedGoalExplosions, setDisplayedGoalExplosions] = useState([]);
+    const [hasMoreGoalExplosions, setHasMoreGoalExplosions] = useState(true);
+
+    const goalExplosionsPerPage = 28;
+
+    const fetchGoalExplosions = async () => {
+        const response = await fetch('http://localhost:3000/goal_explosions');
+        const data = await response.json();
+        return data;
+    };
+
+    const fetchData = async () => {
+        const data = await fetchGoalExplosions();
+        setGoalExplosions(data);
+    };
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('http://localhost:3000/goal_explosions');
-            const data = await response.json();
-            setGoalExplosions(data);
-        };
-
         fetchData();
     }, []);
 
+    useEffect(() => {
+        setDisplayedGoalExplosions([]);
+        setHasMoreGoalExplosions(true);
+    }, [searchTerm]);
+
+    useEffect(() => {
+        const filteredGoalExplosions = goalExplosions.filter((goalExplosion) =>
+            goalExplosion.name.toLowerCase().includes(searchTerm?.toLowerCase())
+        );
+        setDisplayedGoalExplosions(filteredGoalExplosions.slice(0, goalExplosionsPerPage));
+        setHasMoreGoalExplosions(filteredGoalExplosions.length > goalExplosionsPerPage);
+    }, [goalExplosions, searchTerm]);
+
+    const loadMore = () => {
+        setDisplayedGoalExplosions([
+            ...displayedGoalExplosions,
+            ...goalExplosions.slice(
+                displayedGoalExplosions.length,
+                displayedGoalExplosions.length + goalExplosionsPerPage
+            ),
+        ]);
+    };
+
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h1 style={{ textAlign: 'center' }}>Goal Explosions</h1>
+        <>
             <div
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                     gridGap: 20,
                     justifyContent: 'center',
                 }}
             >
-                {goalExplosions.map((goalExplosion) => (
+                {displayedGoalExplosions.map((goalExplosion) => (
                     <Card
                         key={goalExplosion.id}
                         hoverable
-                        style={{ width: '100%' }}
+                        style={{ maxWidth: '300px' }}
                         cover={
                             <img
                                 alt={goalExplosion.name}
                                 src={`${goalExplosion.image}`}
-                                style={{ height: 200, objectFit: 'contain' }}
+                                style={{ height: 'auto', width: '100%', objectFit: 'contain' }}
                             />
                         }
                     >
@@ -44,7 +75,12 @@ const GoalExplosions = () => {
                     </Card>
                 ))}
             </div>
-        </div>
+            {hasMoreGoalExplosions && (
+                <button onClick={loadMore} style={{ marginTop: 20 }}>
+                    Load more goal explosions
+                </button>
+            )}
+        </>
     );
 };
 
