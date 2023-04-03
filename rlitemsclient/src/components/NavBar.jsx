@@ -40,6 +40,9 @@ const NavBar = ({ setSearchTerm }) => {
                     <Link to="/RLDataAPI/wheels" style={{ color: 'inherit', textDecoration: 'none' }}>
                         Wheels
                     </Link>
+                    <Link to="/RLDataAPI/goal_explosions" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        Goal Explosions
+                    </Link>
                 </Typography>
                 <div
                     style={{
