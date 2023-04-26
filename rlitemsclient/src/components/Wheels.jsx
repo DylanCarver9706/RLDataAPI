@@ -8,7 +8,7 @@ const Wheels = ({ searchTerm }) => {
     const [displayedWheels, setDisplayedWheels] = useState([]);
     const [hasMoreWheels, setHasMoreWheels] = useState(true);
 
-    const wheelsPerPage = 28;
+    const wheelsPerPage = 24;
 
     const fetchWheels = async () => {
         const response = await fetch('http://localhost:3000/wheels');
