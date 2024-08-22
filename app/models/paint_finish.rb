@@ -1,0 +1,2 @@
+class PaintFinish < ApplicationRecord
+end

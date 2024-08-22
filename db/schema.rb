@@ -10,13 +10,143 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_24_055527) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_011324) do
+  create_table "antennas", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "avatar_borders", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "banners", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "boosts", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "crates", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "daily_items", force: :cascade do |t|
     t.string "name"
     t.string "item_type"
     t.string "rarity"
     t.string "color"
     t.integer "item_shop_date_id"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "decals", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "engine_sounds", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "goal_explosions", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
     t.boolean "valid_status"
     t.string "image_uri"
     t.string "image_location"
@@ -33,6 +163,84 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_055527) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paint_finishes", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_anthems", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stickers", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "toppers", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trails", force: :cascade do |t|
+    t.string "name"
+    t.string "rarity"
+    t.string "item_type"
+    t.string "color"
+    t.boolean "valid_status"
+    t.string "image_uri"
+    t.string "image_location"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wheels", force: :cascade do |t|
     t.string "name"
     t.string "rarity"
     t.string "item_type"

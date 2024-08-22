@@ -1,0 +1,2 @@
+class AvatarBorder < ApplicationRecord
+end

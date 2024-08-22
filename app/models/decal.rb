@@ -1,0 +1,2 @@
+class Decal < ApplicationRecord
+end

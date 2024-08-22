@@ -1,0 +1,2 @@
+class GoalExplosion < ApplicationRecord
+end
